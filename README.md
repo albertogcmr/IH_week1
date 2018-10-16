@@ -3,7 +3,7 @@ email: garcia.cobo.alberto@gmail.com
 
 # Pasos seguidos
 
-## creamos carpeta
+Creamos la carpeta de trabajo
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1$ mkdir ex-merge
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1$ cd ex-merge/

@@ -3,15 +3,11 @@ email: garcia.cobo.alberto@gmail.com
 
 ## Pasos seguidos
 
+### Inicio del proyecto
 Creamos la carpeta de trabajo
 ```
 alberto@hp:~/Escritorio/IH/IH_week1$ mkdir ex-merge
 alberto@hp:~/Escritorio/IH/IH_week1$ cd ex-merge/
-```
-
-Creamos contenido con visual studio. Ejecutamos la siguiente linea en terminal y procedemos a crear varios archivos
-```
-alberto@hp:~/Escritorio/IH/IH_week1$ code . 
 ```
 
 Creamos un repositorio local
@@ -20,21 +16,27 @@ alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git init
 alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git status
 ```
 
-Creamos un nuevo repositorio en GitHub y seguimos los pasos que nos indica para vincular local y remoto
+Creamos contenido con visual studio. Ejecutamos la siguiente linea en terminal y procedemos a crear varios archivos
+```
+alberto@hp:~/Escritorio/IH/IH_week1$ code . 
+```
 
 Añadimos los 3 archivos creados en al repositorio local
 ```
 alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git add README.md example.py exameple2.py
 alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git status
 ```
+### Repositorio remoto
+Creamos un nuevo repositorio en GitHub y seguimos los pasos que nos indica para vincular local y remoto
 
-No hay que olvidar que si modificamos un archivo hay que volver a añadirlo
+No hay que olvidar que cada vez que modificamos un archivo hay que volver a añadirlo
 ```
 alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git add example.py 
 alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git status
 ```
 
-Hacemos el primer commit pero sale un error extraño
+### Primer obstáculo: login
+Al hacer el primer commit sale un error extraño
 ```
 alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git commit -am "primer commit"
 
@@ -62,6 +64,7 @@ alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git commit -m "primer mensaje"
  create mode 100644 example.py
 ```
 
+### Realizamos el primer push
 Hacemos un push a github. Nos pide el nombre/password y se lo proporcionamos
 ```
 ✘ alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   master  git push origin master
@@ -103,6 +106,7 @@ remote:
 To https://github.com/albertogcmr/IH_week1.git
 ```
 
+### Creando conflictos
 Hacemos cambios, commit y push en master y rama2 respectivamente para crear conflictos pasando de rama en rama con el siguiente comando seleccionando master o rama2
 ```
  alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   rama2  git checkout master
@@ -113,6 +117,7 @@ Ahora hacemos merge de rama2 al master
  alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   master  git push origin master
 ```
 
+### Segundo obstáculo: github es demasiado listo
 Lamentablemente no ha habido conflictos, seremos más agresivos. Localizamos en google una ejemplo de conflicto
 https://git-scm.com/book/es/v1/Ramificaciones-en-Git-Procedimientos-b%C3%A1sicos-para-ramificar-y-fusionar
 Siguiendo el ejemplo de texto ejecutamos tras modificar el mismo archivo en master y en rama2 de una forma incompatible. 
@@ -122,6 +127,7 @@ Auto-fusionando example.py
 CONFLICTO (contenido): Conflicto de fusión en example.py
 Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.
 ```
+### Resolviendo conflictos
 Y finalmente obtenemos conflicto que pasamos a resolver editando el archivo correspondiente
 ```
 <<<<<<< HEAD
@@ -142,6 +148,7 @@ Seguimos la guia ofrecida por git que nos pide realizar commit
 ```
 alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   master ✚ >M<  git commit
 ```
+### Grafo
 Y hacemos finalmente push desde el master obteniendo el siguiente grafo en la sección insights/Network
 ![grafo](captura_grafo.png "Grafo")
 

@@ -12,8 +12,8 @@ alberto@hp:~/Escritorio/IH/IH_week1$ cd ex-merge/
 
 Creamos un repositorio local
 ```
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git init
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git status
+$ git init
+$ git status
 ```
 
 Creamos contenido con visual studio. Ejecutamos la siguiente linea en terminal y procedemos a crear varios archivos
@@ -21,24 +21,30 @@ Creamos contenido con visual studio. Ejecutamos la siguiente linea en terminal y
 alberto@hp:~/Escritorio/IH/IH_week1$ code . 
 ```
 
-Añadimos los 3 archivos creados en al repositorio local
+Añadimos los 3 archivos creados en al repositorio local. En vez de añadir uno a uno hay atajos para git como listar todos los archivos o usar 
+```$ git add ./*```
+Nosotros hemos usado listar todos
 ```
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git add README.md example.py exameple2.py
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git status
+$ git add README.md example.py exameple2.py
+$ git status
 ```
 ### Repositorio remoto
 Creamos un nuevo repositorio en GitHub y seguimos los pasos que nos indica para vincular local y remoto
+```
+git remote add origin https://github.com/albertogcmr/ex-merge.git
+git push -u origin master
+```
 
 No hay que olvidar que cada vez que modificamos un archivo hay que volver a añadirlo
 ```
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git add example.py 
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git status
+$ git add example.py 
+$ git status
 ```
 
 ### Primer obstáculo: login
 Al hacer el primer commit sale un error extraño
 ```
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git commit -am "primer commit"
+$ git commit -am "primer commit"
 
 *** Por favor cuéntame quien eres.
 
@@ -55,8 +61,8 @@ fatal: no es posible auto-detectar la dirección de correo (se obtuvo 'alberto@h
 
 Que se soluciona configurando tu email de usuario siguiendo los pasos indicados
 ```
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git config --global user.email garcia.cobo.alberto@gmail.com
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git commit -m "primer mensaje"
+$ git config --global user.email garcia.cobo.alberto@gmail.com
+$ git commit -m "primer mensaje"
 [master (commit-raíz) 7653f57] primer mensaje
  3 files changed, 7 insertions(+)
  create mode 100644 README.md
@@ -86,7 +92,7 @@ To https://github.com/albertogcmr/IH_week1.git
 
 Ahora modificamos el archivo example.py con el editor de Visual Studio, hacemos git add como otras veces y luego commit y push
 ```
-alberto@hp:~/Escritorio/IH/IH_week1/ex-merge$ git add example.py
+$ git add example.py
 alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   rama2 ✚  git commit -am "hemos cambiado example.py"
 [rama2 8434a6b] hemos cambiado example.py
  1 file changed, 1 insertion(+), 1 deletion(-)

@@ -118,5 +118,5 @@ Fusión automática falló; arregle los conflictos y luego realice un commit con
  alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   master ✚ >M<  git commit
 
 ## y hacemos finalmente push desde el master obteniendo el siguiente grafo
-![grafo](/home/alberto/EscritorioCaptura de pantalla de 2018-10-16 13-35-36.png "Grafo")
+![grafo](home/alberto/EscritorioCaptura de pantalla de 2018-10-16 13-35-36.png "Grafo")
 

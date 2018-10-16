@@ -111,7 +111,7 @@ To https://github.com/albertogcmr/IH_week1.git
 ```
 
 ## lamentablemente no ha habido conflictos, seremos más agresivos
-## https://git-scm.com/book/es/v1/Ramificaciones-en-Git-Procedimientos-b%C3%A1sicos-para-ramificar-y-fusionar
+#### https://git-scm.com/book/es/v1/Ramificaciones-en-Git-Procedimientos-b%C3%A1sicos-para-ramificar-y-fusionar
 ## siguiendo el ejemplo de texto incompatible ejecutamos
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   master  git merge rama2

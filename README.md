@@ -1,7 +1,7 @@
 # IH week1 day2 merge example
 email: garcia.cobo.alberto@gmail.com
 
-# Pasos seguidos
+## Pasos seguidos
 
 Creamos la carpeta de trabajo
 ```
@@ -9,30 +9,32 @@ alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1$ mkdir ex-merge
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1$ cd ex-merge/
 ```
 
-## creamos contenido con visual studio mediante varios archivos
+Creamos contenido con visual studio. Ejecutamos la siguiente linea en terminal y procedemos a crear varios archivos
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1$ code . 
 ```
 
-## creamos repositorio
+Creamos un repositorio local
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git init
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git status
 ```
 
-## añadimos los archivos creados en el repositorio
+Creamos un nuevo repositorio en GitHub y seguimos los pasos que nos indica para vincular local y remoto
+
+Añadimos los 3 archivos creados en al repositorio local
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git add README.md example.py exameple2.py
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git status
 ```
 
-## si modificamos un archivo hay que volver a añadirlo
+No hay que olvidar que si modificamos un archivo hay que volver a añadirlo
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git add example.py 
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git status
 ```
 
-## hacemos el primer commit pero sale un error extraño
+Hacemos el primer commit pero sale un error extraño
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git commit -am "primer commit"
 
@@ -49,7 +51,7 @@ Omite --global para configurar tu identidad solo en este repositorio.
 fatal: no es posible auto-detectar la dirección de correo (se obtuvo 'alberto@alberto-HP-Spectre-13-Ultrabook.(none)')
 ```
 
-## se soluciona configurando tu email de usuario
+Que se soluciona configurando tu email de usuario siguiendo los pasos indicados
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git config --global user.email garcia.cobo.alberto@gmail.com
 alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git commit -m "primer mensaje"
@@ -60,7 +62,7 @@ alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git c
  create mode 100644 example.py
 ```
 
-## Hacemos un push a github, nos pide el nombre/pswd
+Hacemos un push a github. Nos pide el nombre/password y se lo proporcionamos
 ```
 ✘ alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   master  git push origin master
 Username for 'https://github.com': albertogcmr
@@ -79,12 +81,13 @@ To https://github.com/albertogcmr/IH_week1.git
  alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   master  
 ```
 
-## ahora modificamos el archivo example.py, hacemos git add y luego commit y push
+Ahora modificamos el archivo example.py con el editor de Visual Studio, hacemos git add como otras veces y luego commit y push
 ```
+alberto@alberto-HP-Spectre-13-Ultrabook:~/Escritorio/IH/IH_week1/ex-merge$ git add example.py
 alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   rama2 ✚  git commit -am "hemos cambiado example.py"
 [rama2 8434a6b] hemos cambiado example.py
  1 file changed, 1 insertion(+), 1 deletion(-)
- alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   rama2  git push origin rama2
+alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   rama2  git push origin rama2
 Username for 'https://github.com': albertogcmr
 Password for 'https://albertogcmr@github.com': 
 Contando objetos: 3, listo.
@@ -100,26 +103,26 @@ remote:
 To https://github.com/albertogcmr/IH_week1.git
 ```
 
-## hacemos cambios, commit y push en master y rama2 respectivamente para crear conflictos pasando de rama en rama con el comando
+Hacemos cambios, commit y push en master y rama2 respectivamente para crear conflictos pasando de rama en rama con el siguiente comando seleccionando master o rama2
 ```
  alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   rama2  git checkout master
 ```
-## ahora hacemos merge de rama2 al master 
+Ahora hacemos merge de rama2 al master 
 ```
  alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   master  git merge rama2
  alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   master  git push origin master
 ```
 
-## lamentablemente no ha habido conflictos, seremos más agresivos
-#### https://git-scm.com/book/es/v1/Ramificaciones-en-Git-Procedimientos-b%C3%A1sicos-para-ramificar-y-fusionar
-## siguiendo el ejemplo de texto incompatible ejecutamos
+Lamentablemente no ha habido conflictos, seremos más agresivos. Localizamos en google una ejemplo de conflicto
+https://git-scm.com/book/es/v1/Ramificaciones-en-Git-Procedimientos-b%C3%A1sicos-para-ramificar-y-fusionar
+Siguiendo el ejemplo de texto ejecutamos tras modificar el mismo archivo en master y en rama2 de una forma incompatible. 
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   master  git merge rama2
 Auto-fusionando example.py
 CONFLICTO (contenido): Conflicto de fusión en example.py
 Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.
 ```
-## y obtenemos conflicto que pasamos a resolver editando el archivo
+Y finalmente obtenemos conflicto que pasamos a resolver editando el archivo correspondiente
 ```
 <<<<<<< HEAD
 <div id="footer">contact : email.support@github.com</div>
@@ -129,16 +132,16 @@ Fusión automática falló; arregle los conflictos y luego realice un commit con
 </div>
 >>>>>>> rama2
 ```
-## nos quedamos con la rama2 borrando las lineas correspondientes y dejando el archivo como sigue
+Nos quedamos con la rama2 borrando las lineas correspondientes y dejando el archivo como sigue
 ```
 <div id="footer">
   please contact us at support@github.com
 </div>
 ```
-## seguimos la guia ofrecida por git realizando commit
+Seguimos la guia ofrecida por git que nos pide realizar commit
 ```
 alberto@alberto-HP-Spectre-13-Ultrabook  ~/Escritorio/IH/IH_week1/ex-merge   master ✚ >M<  git commit
 ```
-## y hacemos finalmente push desde el master obteniendo el siguiente grafo
+Y hacemos finalmente push desde el master obteniendo el siguiente grafo en la sección insights/Network
 ![grafo](captura_grafo.png "Grafo")
 

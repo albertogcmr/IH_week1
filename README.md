@@ -22,7 +22,9 @@ alberto@hp:~/Escritorio/IH/IH_week1$ code .
 ```
 
 Añadimos los 3 archivos creados en al repositorio local. En vez de añadir uno a uno hay atajos para git como listar todos los archivos o usar 
-```$ git add ./*```
+```
+$ git add ./*
+```
 Nosotros hemos usado listar todos
 ```
 $ git add README.md example.py exameple2.py
@@ -31,8 +33,8 @@ $ git status
 ### Repositorio remoto
 Creamos un nuevo repositorio en GitHub y seguimos los pasos que nos indica para vincular local y remoto
 ```
-git remote add origin https://github.com/albertogcmr/ex-merge.git
-git push -u origin master
+$ git remote add origin https://github.com/albertogcmr/ex-merge.git
+$ git push -u origin master
 ```
 
 No hay que olvidar que cada vez que modificamos un archivo hay que volver a añadirlo
@@ -73,7 +75,7 @@ $ git commit -m "primer mensaje"
 ### Realizamos el primer push
 Hacemos un push a github. Nos pide el nombre/password y se lo proporcionamos
 ```
-✘ alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   master  git push origin master
+$ git push origin master
 Username for 'https://github.com': albertogcmr
 Password for 'https://albertogcmr@github.com': 
 Contando objetos: 5, listo.
@@ -93,10 +95,10 @@ To https://github.com/albertogcmr/IH_week1.git
 Ahora modificamos el archivo example.py con el editor de Visual Studio, hacemos git add como otras veces y luego commit y push
 ```
 $ git add example.py
-alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   rama2 ✚  git commit -am "hemos cambiado example.py"
+$ git commit -am "hemos cambiado example.py"
 [rama2 8434a6b] hemos cambiado example.py
  1 file changed, 1 insertion(+), 1 deletion(-)
-alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   rama2  git push origin rama2
+$ git push origin rama2
 Username for 'https://github.com': albertogcmr
 Password for 'https://albertogcmr@github.com': 
 Contando objetos: 3, listo.
@@ -115,12 +117,12 @@ To https://github.com/albertogcmr/IH_week1.git
 ### Creando conflictos
 Hacemos cambios, commit y push en master y rama2 respectivamente para crear conflictos pasando de rama en rama con el siguiente comando seleccionando master o rama2
 ```
- alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   rama2  git checkout master
+ $ git checkout master
 ```
 Ahora hacemos merge de rama2 al master 
 ```
- alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   master  git merge rama2
- alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   master  git push origin master
+$ git merge rama2
+$ git push origin master
 ```
 
 ### Segundo obstáculo: github es demasiado listo
@@ -128,7 +130,7 @@ Lamentablemente no ha habido conflictos, seremos más agresivos. Localizamos en 
 https://git-scm.com/book/es/v1/Ramificaciones-en-Git-Procedimientos-b%C3%A1sicos-para-ramificar-y-fusionar
 Siguiendo el ejemplo de texto ejecutamos tras modificar el mismo archivo en master y en rama2 de una forma incompatible. 
 ```
-alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   master  git merge rama2
+$ git merge rama2
 Auto-fusionando example.py
 CONFLICTO (contenido): Conflicto de fusión en example.py
 Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.
@@ -152,7 +154,7 @@ Nos quedamos con la rama2 borrando las lineas correspondientes y dejando el arch
 ```
 Seguimos la guia ofrecida por git que nos pide realizar commit
 ```
-alberto@hp  ~/Escritorio/IH/IH_week1/ex-merge   master ✚ >M<  git commit
+$ git commit -am "resolución del conflicto"
 ```
 ### Grafo
 Y hacemos finalmente push desde el master obteniendo el siguiente grafo en la sección insights/Network
